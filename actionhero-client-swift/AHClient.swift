@@ -9,11 +9,12 @@
 import Foundation
 
 class AHClient {
+    typealias foo = () -> Void
     
     var messageCount:Int = 0
     var client:Primus?
-    var options:Dictionary<String, NSObject>?
-    //var callbacks
+    var options:[String: NSObject]?
+    var callbacks:[Int:foo]?
     var id:String?
     //var events = {}
     var rooms:[String]
@@ -22,7 +23,7 @@ class AHClient {
     // Primus
     var _PrimusConnectOptions:PrimusConnectOptions?
     
-    func defaults() -> Dictionary<String, NSObject> {
+    func defaults() -> [String: NSObject] {
         return [
             "host": "127.0.0.1",
             "port": "5000",
@@ -36,11 +37,13 @@ class AHClient {
     }
     
     convenience init() {
-        self.init(options: Dictionary<String, NSObject>())
+        self.init(options: [String: NSObject]())
     }
     
-    init(options:Dictionary<String, NSObject>) {
-        //self.callbacks = {};
+    init(options:[String: NSObject]) {
+ 
+        
+        self.callbacks = [Int: foo]()
         //self.id = nil;
         //self.events = {};
         self.rooms = [];
@@ -89,6 +92,7 @@ class AHClient {
     func handleMessage(data: NSDictionary) {
         NSLog("[data] - Received data: %@", data);
         
+        /*
         let context: String = data["context"] as! String
         
         if context == "api" {
@@ -108,11 +112,42 @@ class AHClient {
                 self.client!.write(["event": "say", "room": "defaultRoom", "message": "HelloWorld from Swift!"]);
             }
         }
+        */
     }
     
     var details:String {
         get {
             return "TODO"
         }
+    }
+    
+    //MARK:- MESSAGING
+    
+    func send(args: [String: NSObject]) {
+        self.send(args, callback:{})
+    }
+    
+    func send(args: [String: NSObject], callback:foo) {
+        self.messageCount++
+        
+        if let _callback = callback as foo! {
+            self.callbacks?.updateValue(_callback, forKey: self.messageCount)
+        }
+        
+        self.client!.write(args)
+    }
+    
+    //MARK:- COMMAND
+    
+    func say(room:String, message:String, callback:foo){
+        self.send(["event": "say", "room": room, "message": message], callback: callback)
+    }
+    
+    func roomAdd(room:String){
+        self.roomAdd(room, callback:{})
+    }
+    
+    func roomAdd(room:String, callback:foo){
+        self.send(["event": "roomAdd", "room": room], callback: callback)
     }
 }

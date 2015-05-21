@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var client:AHClient!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let client = AHClient()
+        client = AHClient()
         client.connect({
-            // get details about myself
-            println(client.details)
+            self.client.roomAdd("defaultRoom");
         })
     }
 }
