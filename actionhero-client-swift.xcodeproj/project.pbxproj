@@ -14,8 +14,6 @@
 		E6A354211B0DA4B600BDE902 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A354201B0DA4B600BDE902 /* Images.xcassets */; };
 		E6A354241B0DA4B600BDE902 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A354221B0DA4B600BDE902 /* LaunchScreen.xib */; };
 		E6A354301B0DA4B600BDE902 /* actionhero_client_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3542F1B0DA4B600BDE902 /* actionhero_client_swiftTests.swift */; };
-		E6A3543B1B0DA5C200BDE902 /* AHClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A354391B0DA5C200BDE902 /* AHClient.swift */; };
-		E6A3543C1B0DA5C200BDE902 /* DBKBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3543A1B0DA5C200BDE902 /* DBKBlock.swift */; };
 		E6A354481B0DA69F00BDE902 /* BlocksKit in Resources */ = {isa = PBXBuildFile; fileRef = E6A354401B0DA69F00BDE902 /* BlocksKit */; };
 		E6A354491B0DA69F00BDE902 /* Emitter in Resources */ = {isa = PBXBuildFile; fileRef = E6A354411B0DA69F00BDE902 /* Emitter */; };
 		E6A3544A1B0DA69F00BDE902 /* GCDTimer in Resources */ = {isa = PBXBuildFile; fileRef = E6A354421B0DA69F00BDE902 /* GCDTimer */; };
@@ -24,7 +22,18 @@
 		E6A3544D1B0DA69F00BDE902 /* Primus in Resources */ = {isa = PBXBuildFile; fileRef = E6A354451B0DA69F00BDE902 /* Primus */; };
 		E6A3544E1B0DA69F00BDE902 /* Reachability in Resources */ = {isa = PBXBuildFile; fileRef = E6A354461B0DA69F00BDE902 /* Reachability */; };
 		E6A3544F1B0DA69F00BDE902 /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = E6A354471B0DA69F00BDE902 /* SocketRocket */; };
-		E6A354511B0DA6FD00BDE902 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A354501B0DA6FD00BDE902 /* SwiftyJSON.swift */; };
+		E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4E1B0F158F00D4859D /* AHClient.swift */; };
+		E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */; };
+		E6E5CF5D1B0F158F00D4859D /* ChangeListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF511B0F158F00D4859D /* ChangeListener.swift */; };
+		E6E5CF5E1B0F158F00D4859D /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF521B0F158F00D4859D /* Emitter.swift */; };
+		E6E5CF5F1B0F158F00D4859D /* EmitterListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF531B0F158F00D4859D /* EmitterListener.swift */; };
+		E6E5CF601B0F158F00D4859D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF541B0F158F00D4859D /* Event.swift */; };
+		E6E5CF611B0F158F00D4859D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF551B0F158F00D4859D /* Helpers.swift */; };
+		E6E5CF621B0F158F00D4859D /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF561B0F158F00D4859D /* Listener.swift */; };
+		E6E5CF631B0F158F00D4859D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF571B0F158F00D4859D /* Notification.swift */; };
+		E6E5CF641B0F158F00D4859D /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF581B0F158F00D4859D /* NotificationListener.swift */; };
+		E6E5CF651B0F158F00D4859D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF591B0F158F00D4859D /* Signal.swift */; };
+		E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +60,6 @@
 		E6A354291B0DA4B600BDE902 /* actionhero-client-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "actionhero-client-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A3542E1B0DA4B600BDE902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A3542F1B0DA4B600BDE902 /* actionhero_client_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actionhero_client_swiftTests.swift; sourceTree = "<group>"; };
-		E6A354391B0DA5C200BDE902 /* AHClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHClient.swift; sourceTree = "<group>"; };
-		E6A3543A1B0DA5C200BDE902 /* DBKBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBKBlock.swift; sourceTree = "<group>"; };
 		E6A3543D1B0DA5E400BDE902 /* actionhero-client-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "actionhero-client-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6A354401B0DA69F00BDE902 /* BlocksKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BlocksKit; path = Pods/BlocksKit; sourceTree = "<group>"; };
 		E6A354411B0DA69F00BDE902 /* Emitter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Emitter; path = Pods/Emitter; sourceTree = "<group>"; };
@@ -62,7 +69,18 @@
 		E6A354451B0DA69F00BDE902 /* Primus */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Primus; path = Pods/Primus; sourceTree = "<group>"; };
 		E6A354461B0DA69F00BDE902 /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Reachability; path = Pods/Reachability; sourceTree = "<group>"; };
 		E6A354471B0DA69F00BDE902 /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SocketRocket; path = Pods/SocketRocket; sourceTree = "<group>"; };
-		E6A354501B0DA6FD00BDE902 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E6E5CF4E1B0F158F00D4859D /* AHClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHClient.swift; sourceTree = "<group>"; };
+		E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBKBlock.swift; sourceTree = "<group>"; };
+		E6E5CF511B0F158F00D4859D /* ChangeListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeListener.swift; sourceTree = "<group>"; };
+		E6E5CF521B0F158F00D4859D /* Emitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
+		E6E5CF531B0F158F00D4859D /* EmitterListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterListener.swift; sourceTree = "<group>"; };
+		E6E5CF541B0F158F00D4859D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E6E5CF551B0F158F00D4859D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E6E5CF561B0F158F00D4859D /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
+		E6E5CF571B0F158F00D4859D /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E6E5CF581B0F158F00D4859D /* NotificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
+		E6E5CF591B0F158F00D4859D /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +122,7 @@
 		E6A3540B1B0DA4B600BDE902 = {
 			isa = PBXGroup;
 			children = (
+				E6E5CF4D1B0F158F00D4859D /* libs */,
 				E6A354401B0DA69F00BDE902 /* BlocksKit */,
 				E6A354411B0DA69F00BDE902 /* Emitter */,
 				E6A354421B0DA69F00BDE902 /* GCDTimer */,
@@ -132,9 +151,6 @@
 		E6A354161B0DA4B600BDE902 /* actionhero-client-swift */ = {
 			isa = PBXGroup;
 			children = (
-				E6A354501B0DA6FD00BDE902 /* SwiftyJSON.swift */,
-				E6A354391B0DA5C200BDE902 /* AHClient.swift */,
-				E6A3543A1B0DA5C200BDE902 /* DBKBlock.swift */,
 				E6A354191B0DA4B600BDE902 /* AppDelegate.swift */,
 				E6A3541B1B0DA4B600BDE902 /* ViewController.swift */,
 				E6A3541D1B0DA4B600BDE902 /* Main.storyboard */,
@@ -169,6 +185,34 @@
 				E6A3542E1B0DA4B600BDE902 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6E5CF4D1B0F158F00D4859D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5CF4E1B0F158F00D4859D /* AHClient.swift */,
+				E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */,
+				E6E5CF501B0F158F00D4859D /* EmitterKit */,
+				E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */,
+			);
+			name = libs;
+			path = "actionhero-client-swift/libs";
+			sourceTree = "<group>";
+		};
+		E6E5CF501B0F158F00D4859D /* EmitterKit */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5CF511B0F158F00D4859D /* ChangeListener.swift */,
+				E6E5CF521B0F158F00D4859D /* Emitter.swift */,
+				E6E5CF531B0F158F00D4859D /* EmitterListener.swift */,
+				E6E5CF541B0F158F00D4859D /* Event.swift */,
+				E6E5CF551B0F158F00D4859D /* Helpers.swift */,
+				E6E5CF561B0F158F00D4859D /* Listener.swift */,
+				E6E5CF571B0F158F00D4859D /* Notification.swift */,
+				E6E5CF581B0F158F00D4859D /* NotificationListener.swift */,
+				E6E5CF591B0F158F00D4859D /* Signal.swift */,
+			);
+			path = EmitterKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,10 +358,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A3543B1B0DA5C200BDE902 /* AHClient.swift in Sources */,
-				E6A3543C1B0DA5C200BDE902 /* DBKBlock.swift in Sources */,
+				E6E5CF601B0F158F00D4859D /* Event.swift in Sources */,
+				E6E5CF621B0F158F00D4859D /* Listener.swift in Sources */,
+				E6E5CF5E1B0F158F00D4859D /* Emitter.swift in Sources */,
+				E6E5CF651B0F158F00D4859D /* Signal.swift in Sources */,
 				E6A3541C1B0DA4B600BDE902 /* ViewController.swift in Sources */,
-				E6A354511B0DA6FD00BDE902 /* SwiftyJSON.swift in Sources */,
+				E6E5CF5D1B0F158F00D4859D /* ChangeListener.swift in Sources */,
+				E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */,
+				E6E5CF641B0F158F00D4859D /* NotificationListener.swift in Sources */,
+				E6E5CF611B0F158F00D4859D /* Helpers.swift in Sources */,
+				E6E5CF5F1B0F158F00D4859D /* EmitterListener.swift in Sources */,
+				E6E5CF631B0F158F00D4859D /* Notification.swift in Sources */,
+				E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */,
+				E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */,
 				E6A3541A1B0DA4B600BDE902 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

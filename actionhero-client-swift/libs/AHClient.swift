@@ -8,17 +8,18 @@
 
 import Foundation
 
-class AHClient {
-    typealias foo = () -> Void
+public class AHClient: Notification {
+    
+    typealias foo = (NSDictionary) -> Void
     
     var messageCount:Int = 0
     var client:Primus?
     var options:[String: NSObject]?
-    var callbacks:[Int:foo]?
+    var callbacks:[foo]?
     var id:String?
     //var events = {}
-    var rooms:[String]
-    var state:String
+    var rooms:[String] = []
+    var state:String = "disconnected"
     
     // Primus
     var _PrimusConnectOptions:PrimusConnectOptions?
@@ -37,19 +38,29 @@ class AHClient {
     }
     
     convenience init() {
-        self.init(options: [String: NSObject]())
+        self.init(options: ["":""])
     }
     
-    init(options:[String: NSObject]) {
- 
+    public override init (_ name: String) {
+        super.init("AHVlient")
+    }
+    
+    convenience init(options:[String: NSObject]) {
+
+        self.init("AHVlient")
         
-        self.callbacks = [Int: foo]()
+        self.callbacks = [foo]()
         //self.id = nil;
         //self.events = {};
-        self.rooms = [];
-        self.state = "disconnected";
+        //self.rooms = [];
+        //self.state = "disconnected";
+        
+        //super.init()
         
         self.options = self.defaults();
+        
+        //self.init(options: [String: NSObject]())
+        
         for (key, value) in options {
             self.options![key] = options[key];
         }
@@ -59,6 +70,8 @@ class AHClient {
         _PrimusConnectOptions!.timeout = 200
         //_PrimusConnectOptions.manual = true
     }
+    
+    //MARK:- CONNECTION
     
     func connect(callback:() -> Void) {
         
@@ -89,8 +102,28 @@ class AHClient {
         }.casted)
     }
     
-    func handleMessage(data: NSDictionary) {
-        NSLog("[data] - Received data: %@", data);
+    func handleMessage(message: NSDictionary) {
+        NSLog("[data] - Received data: %@", message);
+        
+        self.emit(["message": message])
+        
+        let context: String = message["context"] as! String
+        
+        if context == "response" {
+
+            let messageCount: Int = message["messageCount"] as! Int
+            let _callback = self.callbacks?[messageCount] as foo!
+            if (_callback != nil) {
+                _callback(message)
+            }
+
+            // TODO
+        } else if context == "api"  && (message["welcome"] != nil) {
+            
+            println("emit:welcome")
+            self.emit("welcome", message)
+        }
+
         
         /*
         let context: String = data["context"] as! String
@@ -124,15 +157,17 @@ class AHClient {
     //MARK:- MESSAGING
     
     func send(args: [String: NSObject]) {
-        self.send(args, callback:{})
+        self.send(args, callback:{ data in })
     }
     
     func send(args: [String: NSObject], callback:foo) {
-        self.messageCount++
+        
         
         if let _callback = callback as foo! {
-            self.callbacks?.updateValue(_callback, forKey: self.messageCount)
+            self.callbacks?.insert(_callback, atIndex: self.messageCount)
         }
+        
+        self.messageCount++
         
         self.client!.write(args)
     }
@@ -144,7 +179,9 @@ class AHClient {
     }
     
     func roomAdd(room:String){
-        self.roomAdd(room, callback:{})
+        self.roomAdd(room, callback:{ data in
+            //TODO
+        })
     }
     
     func roomAdd(room:String, callback:foo){
