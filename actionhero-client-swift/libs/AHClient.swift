@@ -10,12 +10,12 @@ import Foundation
 
 public class AHClient: Notification {
     
-    typealias foo = (NSDictionary) -> Void
+    typealias foo = (NSDictionary?) -> Void
     
     var messageCount:Int = 0
     var client:Primus?
     var options:[String: NSObject]?
-    var callbacks:[foo]?
+    var callbacks:[Int:foo]?
     var id:String?
     //var events = {}
     var rooms:[String] = []
@@ -49,7 +49,7 @@ public class AHClient: Notification {
 
         self.init("AHVlient")
         
-        self.callbacks = [foo]()
+        self.callbacks = [Int:foo]()
         //self.id = nil;
         //self.events = {};
         //self.rooms = [];
@@ -162,12 +162,11 @@ public class AHClient: Notification {
     
     func send(args: [String: NSObject], callback:foo) {
         
+        self.messageCount++
         
         if let _callback = callback as foo! {
-            self.callbacks?.insert(_callback, atIndex: self.messageCount)
+            self.callbacks?[self.messageCount] = _callback
         }
-        
-        self.messageCount++
         
         self.client!.write(args)
     }
@@ -178,9 +177,9 @@ public class AHClient: Notification {
         self.send(["event": "say", "room": room, "message": message], callback: callback)
     }
     
-    func roomAdd(room:String){
+    func roomAdd(room:String = "defaultRoom"){
         self.roomAdd(room, callback:{ data in
-            //TODO
+            println("roomAdd.data: \(data)")
         })
     }
     

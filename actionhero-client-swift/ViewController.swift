@@ -21,12 +21,12 @@ class ViewController: UIViewController {
         client = AHClient()
 
         listener = client.on { data in
-            println("data: \(data)")
+            //println("data: \(data)")
             self.appendMessage("\(data)")
         }
         
         client.connect() {
-            self.client.roomAdd("defaultRoom");
+            self.client.roomAdd();
         }
     }
     
