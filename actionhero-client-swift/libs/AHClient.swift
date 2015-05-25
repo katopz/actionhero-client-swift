@@ -10,13 +10,14 @@ import Foundation
 
 class AHClient:AHEmitter {
     
-    typealias foo = (NSDictionary?) -> Void
+    typealias foo = NSDictionary -> Void
     
     var messageCount:Int = 0
     var client:Primus?
     var options:[String: NSObject]?
     var callbacks:[Int:foo]?
     var id:String?
+    var fingerprint:String?
     //var events = {}
     var rooms:[String] = []
     var state:String = "disconnected"
@@ -128,7 +129,24 @@ class AHClient:AHEmitter {
     
     var details:String {
         get {
-            return "TODO"
+            return "TODO" // { apiPath: '/api', url: window.location.origin }
+        }
+    }
+    
+    func configure(details:NSDictionary, _ callback:foo?) {
+        for room in rooms {
+            self.send(["event": "roomAdd", "room": room])
+        }
+        
+        self.detailsView(){ details in
+            let data = details["data"] as! NSDictionary
+            self.id          = data["id"] as? String
+            self.fingerprint = data["fingerprint"] as? String
+            self.rooms       = data["rooms"] as! [String]
+            
+            if let _callback = callback as foo! {
+                _callback(details);
+            }
         }
     }
     
@@ -151,7 +169,11 @@ class AHClient:AHEmitter {
     
     //MARK:- COMMAND
     
-    func say(room:String, message:String, callback:foo?){
+    func detailsView(callback:foo?) {
+        self.send(["event": "detailsView"], callback: callback)
+    }
+    
+    func say(room:String, message:String, callback:foo?) {
         self.send(["event": "say", "room": room, "message": message], callback: callback)
     }
     
@@ -160,6 +182,8 @@ class AHClient:AHEmitter {
     }
     
     func roomAdd(room:String, _ callback:foo?) {
-        self.send(["event": "roomAdd", "room": room], callback: callback)
+        self.send(["event": "roomAdd", "room": room], callback: { details in
+            self.configure(details, callback)
+        })
     }
 }

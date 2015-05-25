@@ -18,26 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uab-UR-8gO">
-                                <rect key="frame" x="16" y="20" width="568" height="300"/>
+                                <rect key="frame" x="16" y="20" width="568" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-lA-DDM">
+                                <rect key="frame" x="16" y="228" width="488" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsL-z3-2PN">
+                                <rect key="frame" x="512" y="228" width="72" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="2zn-N2-kxl"/>
+                                </constraints>
+                                <state key="normal" title="Say">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sayClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tea-jU-7a3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Uab-UR-8gO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5AK-Fy-opk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uab-UR-8gO" secondAttribute="bottom" constant="280" id="AGY-r1-iwU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uab-UR-8gO" secondAttribute="bottom" constant="380" id="AGY-r1-iwU"/>
                             <constraint firstItem="Uab-UR-8gO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Vgk-Pd-Y9O"/>
+                            <constraint firstItem="IsL-z3-2PN" firstAttribute="leading" secondItem="tSG-lA-DDM" secondAttribute="trailing" constant="8" symbolic="YES" id="k1l-Y4-Zy3"/>
+                            <constraint firstItem="tSG-lA-DDM" firstAttribute="top" secondItem="Uab-UR-8gO" secondAttribute="bottom" constant="8" id="kQo-eb-LUn"/>
+                            <constraint firstItem="tSG-lA-DDM" firstAttribute="leading" secondItem="Uab-UR-8gO" secondAttribute="leading" id="p3i-wN-aWF"/>
                             <constraint firstItem="Uab-UR-8gO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qjM-Ai-o9P"/>
+                            <constraint firstItem="IsL-z3-2PN" firstAttribute="trailing" secondItem="Uab-UR-8gO" secondAttribute="trailing" id="sJW-Ib-X3p"/>
+                            <constraint firstItem="IsL-z3-2PN" firstAttribute="top" secondItem="tSG-lA-DDM" secondAttribute="top" id="tvI-dr-Wdq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chatTextView" destination="Uab-UR-8gO" id="DNs-5J-Pbu"/>
+                        <outlet property="msgTextField" destination="tSG-lA-DDM" id="CVs-cR-wjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21" y="291"/>
         </scene>
     </scenes>
 </document>

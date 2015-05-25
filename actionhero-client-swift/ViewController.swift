@@ -24,17 +24,18 @@ class ViewController: UIViewController {
 
     // v
     @IBOutlet weak var chatTextView: UITextView!
+    @IBOutlet weak var msgTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         client = AHClient()
         
-        client.on("welcome"){ data in
+        client.on("welcome") { data in
             self.appendMessage(data)
         }
         
-        client.on("say"){ data in
+        client.on("say") { data in
             self.appendMessage(data)
         }
         
@@ -42,6 +43,8 @@ class ViewController: UIViewController {
             self.client.roomAdd();
         }
     }
+    
+    //MARK:- In
     
     func appendMessage(message:[NSObject : AnyObject]) {
         if message.isEmpty {
@@ -58,6 +61,26 @@ class ViewController: UIViewController {
         }
         
         self.chatTextView.text = chatTextView.text + s + "\n"
+    }
+    
+    //MARK:- Out
+    
+    typealias foo = (NSDictionary?) -> Void
+    
+    @IBAction func sayClicked(sender: AnyObject) {
+        sendMessage()
+    }
+    
+    func sendMessage() {
+        let message:String = msgTextField.text
+        
+        if message.isEmpty {
+            return
+        }
+        
+        client.say(client.rooms[0], message: message) { data in
+            println("Said!")
+        }
     }
 }
 
