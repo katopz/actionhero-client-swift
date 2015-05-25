@@ -18,7 +18,7 @@ class AHClient:AHEmitter {
     var callbacks:[Int:foo]?
     var id:String?
     var fingerprint:String?
-    //var events = {}
+
     var rooms:[String] = []
     var state:String = "disconnected"
     var welcomeMessage:String = ""

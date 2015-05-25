@@ -31,13 +31,11 @@ class ViewController: UIViewController {
         
         client = AHClient()
         
-        client.on("welcome") { data in
-            self.appendMessage(data)
-        }
+        client.on("alert") { message in println(message)}
+        client.on("api") { message in println(message)}
         
-        client.on("say") { data in
-            self.appendMessage(data)
-        }
+        client.on("welcome") { message in self.appendMessage(message)}
+        client.on("say") { message in self.appendMessage(message)}
         
         client.connect() {
             self.client.roomAdd();
