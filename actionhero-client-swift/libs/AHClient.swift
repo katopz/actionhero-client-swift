@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AHClient {
+class AHClient:AHEmitter {
     
     typealias foo = (NSDictionary?) -> Void
     
@@ -38,23 +38,9 @@ public class AHClient {
         ];
     }
     
-    //MARK:- Emitter
-    
-    func on(name:String, _ handler:([NSObject : AnyObject]!) -> Void) {
-        NSNotificationCenter.defaultCenter().addObserverForName(name, object: self, queue: nil, usingBlock: {
-            notification in
-            handler(notification.userInfo)
-        })
-    }
-    
-    func emit(name:String, _ data: NSDictionary) {
-        let userInfo = data as [NSObject : AnyObject]
-        NSNotificationCenter.defaultCenter().postNotificationName(name, object: self, userInfo: userInfo)
-    }
-    
     //MARK:- init
     
-    convenience init() {
+    override convenience init() {
         self.init(options: ["":""])
     }
     
@@ -66,7 +52,7 @@ public class AHClient {
         //self.rooms = [];
         //self.state = "disconnected";
         
-        //super.init()
+        super.init()
         
         self.options = self.defaults();
         
@@ -138,29 +124,6 @@ public class AHClient {
         }else if context == "api" {
             self.emit("api", message)
         }
-
-        
-        /*
-        let context: String = data["context"] as! String
-        
-        if context == "api" {
-            if (data["welcome"] != nil) {
-                // {"event":"detailsView"}
-                self.client!.write(["event": "detailsView"]);
-            }
-        }else if context == "response" {
-            
-            let messageCount: Int = data["messageCount"] as! Int
-            
-            if messageCount == 1 {
-                // {"event":"roomAdd","room":"defaultRoom"}
-                self.client!.write(["event": "roomAdd", "room": "defaultRoom"]);
-            } else if messageCount == 2 {
-                // {"event":"say","room":"defaultRoom","message":"HelloWorld!"}
-                self.client!.write(["event": "say", "room": "defaultRoom", "message": "HelloWorld from Swift!"]);
-            }
-        }
-        */
     }
     
     var details:String {

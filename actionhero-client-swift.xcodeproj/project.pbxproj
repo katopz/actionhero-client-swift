@@ -22,17 +22,9 @@
 		E6A3544D1B0DA69F00BDE902 /* Primus in Resources */ = {isa = PBXBuildFile; fileRef = E6A354451B0DA69F00BDE902 /* Primus */; };
 		E6A3544E1B0DA69F00BDE902 /* Reachability in Resources */ = {isa = PBXBuildFile; fileRef = E6A354461B0DA69F00BDE902 /* Reachability */; };
 		E6A3544F1B0DA69F00BDE902 /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = E6A354471B0DA69F00BDE902 /* SocketRocket */; };
+		E6BA6E5B1B13264800A7450E /* AHEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA6E5A1B13264800A7450E /* AHEmitter.swift */; };
 		E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4E1B0F158F00D4859D /* AHClient.swift */; };
 		E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */; };
-		E6E5CF5D1B0F158F00D4859D /* ChangeListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF511B0F158F00D4859D /* ChangeListener.swift */; };
-		E6E5CF5E1B0F158F00D4859D /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF521B0F158F00D4859D /* Emitter.swift */; };
-		E6E5CF5F1B0F158F00D4859D /* EmitterListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF531B0F158F00D4859D /* EmitterListener.swift */; };
-		E6E5CF601B0F158F00D4859D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF541B0F158F00D4859D /* Event.swift */; };
-		E6E5CF611B0F158F00D4859D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF551B0F158F00D4859D /* Helpers.swift */; };
-		E6E5CF621B0F158F00D4859D /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF561B0F158F00D4859D /* Listener.swift */; };
-		E6E5CF631B0F158F00D4859D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF571B0F158F00D4859D /* Notification.swift */; };
-		E6E5CF641B0F158F00D4859D /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF581B0F158F00D4859D /* NotificationListener.swift */; };
-		E6E5CF651B0F158F00D4859D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF591B0F158F00D4859D /* Signal.swift */; };
 		E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,17 +61,9 @@
 		E6A354451B0DA69F00BDE902 /* Primus */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Primus; path = Pods/Primus; sourceTree = "<group>"; };
 		E6A354461B0DA69F00BDE902 /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Reachability; path = Pods/Reachability; sourceTree = "<group>"; };
 		E6A354471B0DA69F00BDE902 /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SocketRocket; path = Pods/SocketRocket; sourceTree = "<group>"; };
+		E6BA6E5A1B13264800A7450E /* AHEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHEmitter.swift; sourceTree = "<group>"; };
 		E6E5CF4E1B0F158F00D4859D /* AHClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHClient.swift; sourceTree = "<group>"; };
 		E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBKBlock.swift; sourceTree = "<group>"; };
-		E6E5CF511B0F158F00D4859D /* ChangeListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeListener.swift; sourceTree = "<group>"; };
-		E6E5CF521B0F158F00D4859D /* Emitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
-		E6E5CF531B0F158F00D4859D /* EmitterListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterListener.swift; sourceTree = "<group>"; };
-		E6E5CF541B0F158F00D4859D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		E6E5CF551B0F158F00D4859D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		E6E5CF561B0F158F00D4859D /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
-		E6E5CF571B0F158F00D4859D /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		E6E5CF581B0F158F00D4859D /* NotificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
-		E6E5CF591B0F158F00D4859D /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,28 +175,12 @@
 			isa = PBXGroup;
 			children = (
 				E6E5CF4E1B0F158F00D4859D /* AHClient.swift */,
+				E6BA6E5A1B13264800A7450E /* AHEmitter.swift */,
 				E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */,
-				E6E5CF501B0F158F00D4859D /* EmitterKit */,
 				E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */,
 			);
 			name = libs;
 			path = "actionhero-client-swift/libs";
-			sourceTree = "<group>";
-		};
-		E6E5CF501B0F158F00D4859D /* EmitterKit */ = {
-			isa = PBXGroup;
-			children = (
-				E6E5CF511B0F158F00D4859D /* ChangeListener.swift */,
-				E6E5CF521B0F158F00D4859D /* Emitter.swift */,
-				E6E5CF531B0F158F00D4859D /* EmitterListener.swift */,
-				E6E5CF541B0F158F00D4859D /* Event.swift */,
-				E6E5CF551B0F158F00D4859D /* Helpers.swift */,
-				E6E5CF561B0F158F00D4859D /* Listener.swift */,
-				E6E5CF571B0F158F00D4859D /* Notification.swift */,
-				E6E5CF581B0F158F00D4859D /* NotificationListener.swift */,
-				E6E5CF591B0F158F00D4859D /* Signal.swift */,
-			);
-			path = EmitterKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,17 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6E5CF601B0F158F00D4859D /* Event.swift in Sources */,
-				E6E5CF621B0F158F00D4859D /* Listener.swift in Sources */,
-				E6E5CF5E1B0F158F00D4859D /* Emitter.swift in Sources */,
-				E6E5CF651B0F158F00D4859D /* Signal.swift in Sources */,
+				E6BA6E5B1B13264800A7450E /* AHEmitter.swift in Sources */,
 				E6A3541C1B0DA4B600BDE902 /* ViewController.swift in Sources */,
-				E6E5CF5D1B0F158F00D4859D /* ChangeListener.swift in Sources */,
 				E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */,
-				E6E5CF641B0F158F00D4859D /* NotificationListener.swift in Sources */,
-				E6E5CF611B0F158F00D4859D /* Helpers.swift in Sources */,
-				E6E5CF5F1B0F158F00D4859D /* EmitterListener.swift in Sources */,
-				E6E5CF631B0F158F00D4859D /* Notification.swift in Sources */,
 				E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */,
 				E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */,
 				E6A3541A1B0DA4B600BDE902 /* AppDelegate.swift in Sources */,
