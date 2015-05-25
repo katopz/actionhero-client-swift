@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AHClient: Notification {
+public class AHClient {
     
     typealias foo = (NSDictionary?) -> Void
     
@@ -20,6 +20,7 @@ public class AHClient: Notification {
     //var events = {}
     var rooms:[String] = []
     var state:String = "disconnected"
+    var welcomeMessage:String = ""
     
     // Primus
     var _PrimusConnectOptions:PrimusConnectOptions?
@@ -37,17 +38,27 @@ public class AHClient: Notification {
         ];
     }
     
+    //MARK:- Emitter
+    
+    func on(name:String, _ handler:([NSObject : AnyObject]!) -> Void) {
+        NSNotificationCenter.defaultCenter().addObserverForName(name, object: self, queue: nil, usingBlock: {
+            notification in
+            handler(notification.userInfo)
+        })
+    }
+    
+    func emit(name:String, _ data: NSDictionary) {
+        let userInfo = data as [NSObject : AnyObject]
+        NSNotificationCenter.defaultCenter().postNotificationName(name, object: self, userInfo: userInfo)
+    }
+    
+    //MARK:- init
+    
     convenience init() {
         self.init(options: ["":""])
     }
     
-    public override init (_ name: String) {
-        super.init("AHVlient")
-    }
-    
-    convenience init(options:[String: NSObject]) {
-
-        self.init("AHVlient")
+    init(options:[String: NSObject]) {
         
         self.callbacks = [Int:foo]()
         //self.id = nil;
@@ -105,7 +116,7 @@ public class AHClient: Notification {
     func handleMessage(message: NSDictionary) {
         NSLog("[data] - Received data: %@", message);
         
-        self.emit(["message": message])
+        //self.emit(["message": message])
         
         let context: String = message["context"] as! String
         
@@ -117,11 +128,15 @@ public class AHClient: Notification {
                 _callback(message)
             }
 
-            // TODO
-        } else if context == "api"  && (message["welcome"] != nil) {
-            
-            println("emit:welcome")
+        } else if context == "user" {
+            self.emit("say", message)
+        } else if context == "alert" {
+            self.emit("alert", message)
+        } else if (message["welcome"] != nil) && context == "api" {
+            self.welcomeMessage = message["welcome"] as! String
             self.emit("welcome", message)
+        }else if context == "api" {
+            self.emit("api", message)
         }
 
         
@@ -160,7 +175,7 @@ public class AHClient: Notification {
         self.send(args, callback:{ data in })
     }
     
-    func send(args: [String: NSObject], callback:foo) {
+    func send(args: [String: NSObject], callback:foo?) {
         
         self.messageCount++
         
@@ -173,17 +188,15 @@ public class AHClient: Notification {
     
     //MARK:- COMMAND
     
-    func say(room:String, message:String, callback:foo){
+    func say(room:String, message:String, callback:foo?){
         self.send(["event": "say", "room": room, "message": message], callback: callback)
     }
     
-    func roomAdd(room:String = "defaultRoom"){
-        self.roomAdd(room, callback:{ data in
-            println("roomAdd.data: \(data)")
-        })
+    func roomAdd() {
+        roomAdd("defaultRoom", nil)
     }
     
-    func roomAdd(room:String, callback:foo){
+    func roomAdd(room:String, _ callback:foo?) {
         self.send(["event": "roomAdd", "room": room], callback: callback)
     }
 }
