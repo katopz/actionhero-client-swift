@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C6BF5595E3F654DF18B53261 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 122E4F7F78E3BAF1FD4710F4 /* libPods.a */; };
+		E61744601B14929C00F8B0E0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E617445B1B14929C00F8B0E0 /* .gitignore */; };
+		E61744611B14929C00F8B0E0 /* KZBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617445C1B14929C00F8B0E0 /* KZBlock.swift */; };
+		E61744621B14929C00F8B0E0 /* KZPacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617445D1B14929C00F8B0E0 /* KZPacker.swift */; };
+		E61744631B14929C00F8B0E0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E617445E1B14929C00F8B0E0 /* LICENSE */; };
+		E61744641B14929C00F8B0E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E617445F1B14929C00F8B0E0 /* README.md */; };
 		E6A3541A1B0DA4B600BDE902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A354191B0DA4B600BDE902 /* AppDelegate.swift */; };
 		E6A3541C1B0DA4B600BDE902 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3541B1B0DA4B600BDE902 /* ViewController.swift */; };
 		E6A3541F1B0DA4B600BDE902 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A3541D1B0DA4B600BDE902 /* Main.storyboard */; };
@@ -24,7 +29,6 @@
 		E6A3544F1B0DA69F00BDE902 /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = E6A354471B0DA69F00BDE902 /* SocketRocket */; };
 		E6BA6E5B1B13264800A7450E /* AHEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA6E5A1B13264800A7450E /* AHEmitter.swift */; };
 		E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4E1B0F158F00D4859D /* AHClient.swift */; };
-		E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */; };
 		E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,11 @@
 		122E4F7F78E3BAF1FD4710F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A94C6158D19DF88E766A1B0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ADEDD56687538FADF150F5DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E617445B1B14929C00F8B0E0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E617445C1B14929C00F8B0E0 /* KZBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZBlock.swift; sourceTree = "<group>"; };
+		E617445D1B14929C00F8B0E0 /* KZPacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZPacker.swift; sourceTree = "<group>"; };
+		E617445E1B14929C00F8B0E0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E617445F1B14929C00F8B0E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E6A354141B0DA4B600BDE902 /* actionhero-client-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "actionhero-client-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A354181B0DA4B600BDE902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A354191B0DA4B600BDE902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +72,6 @@
 		E6A354471B0DA69F00BDE902 /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SocketRocket; path = Pods/SocketRocket; sourceTree = "<group>"; };
 		E6BA6E5A1B13264800A7450E /* AHEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHEmitter.swift; sourceTree = "<group>"; };
 		E6E5CF4E1B0F158F00D4859D /* AHClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHClient.swift; sourceTree = "<group>"; };
-		E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBKBlock.swift; sourceTree = "<group>"; };
 		E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +109,18 @@
 				A94C6158D19DF88E766A1B0F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E617445A1B14929C00F8B0E0 /* swift-handy */ = {
+			isa = PBXGroup;
+			children = (
+				E617445B1B14929C00F8B0E0 /* .gitignore */,
+				E617445C1B14929C00F8B0E0 /* KZBlock.swift */,
+				E617445D1B14929C00F8B0E0 /* KZPacker.swift */,
+				E617445E1B14929C00F8B0E0 /* LICENSE */,
+				E617445F1B14929C00F8B0E0 /* README.md */,
+			);
+			path = "swift-handy";
 			sourceTree = "<group>";
 		};
 		E6A3540B1B0DA4B600BDE902 = {
@@ -174,9 +194,9 @@
 		E6E5CF4D1B0F158F00D4859D /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				E617445A1B14929C00F8B0E0 /* swift-handy */,
 				E6E5CF4E1B0F158F00D4859D /* AHClient.swift */,
 				E6BA6E5A1B13264800A7450E /* AHEmitter.swift */,
-				E6E5CF4F1B0F158F00D4859D /* DBKBlock.swift */,
 				E6E5CF5A1B0F158F00D4859D /* SwiftyJSON.swift */,
 			);
 			name = libs;
@@ -267,8 +287,10 @@
 			files = (
 				E6A3544C1B0DA69F00BDE902 /* libextobjc in Resources */,
 				E6A3541F1B0DA4B600BDE902 /* Main.storyboard in Resources */,
+				E61744631B14929C00F8B0E0 /* LICENSE in Resources */,
 				E6A354241B0DA4B600BDE902 /* LaunchScreen.xib in Resources */,
 				E6A354211B0DA4B600BDE902 /* Images.xcassets in Resources */,
+				E61744601B14929C00F8B0E0 /* .gitignore in Resources */,
 				E6A3544A1B0DA69F00BDE902 /* GCDTimer in Resources */,
 				E6A354491B0DA69F00BDE902 /* Emitter in Resources */,
 				E6A3544D1B0DA69F00BDE902 /* Primus in Resources */,
@@ -328,9 +350,11 @@
 			files = (
 				E6BA6E5B1B13264800A7450E /* AHEmitter.swift in Sources */,
 				E6A3541C1B0DA4B600BDE902 /* ViewController.swift in Sources */,
+				E61744611B14929C00F8B0E0 /* KZBlock.swift in Sources */,
 				E6E5CF5B1B0F158F00D4859D /* AHClient.swift in Sources */,
 				E6E5CF661B0F158F00D4859D /* SwiftyJSON.swift in Sources */,
-				E6E5CF5C1B0F158F00D4859D /* DBKBlock.swift in Sources */,
+				E61744621B14929C00F8B0E0 /* KZPacker.swift in Sources */,
+				E61744641B14929C00F8B0E0 /* README.md in Sources */,
 				E6A3541A1B0DA4B600BDE902 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

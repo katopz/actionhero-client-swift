@@ -83,7 +83,7 @@ class AHClient:AHEmitter {
             self.client?.open();
         }
         
-        self.client!.on("open", listener : Block<@objc_block () -> ()> {
+        self.client!.on("open", listener : KZBlock<@objc_block () -> ()> {
             NSLog("[open] - The connection has been established.")
             
             if(self.state == "connected"){
@@ -95,7 +95,7 @@ class AHClient:AHEmitter {
             
         }.casted)
         
-        self.client!.on("data", listener : Block<@objc_block (NSDictionary, AnyObject) -> ()> { (data: NSDictionary, raw: AnyObject) in
+        self.client!.on("data", listener : KZBlock<@objc_block (NSDictionary, AnyObject) -> ()> { (data: NSDictionary, raw: AnyObject) in
             self.handleMessage(data)
         }.casted)
     }

@@ -1,0 +1,3 @@
+[submodule "actionhero-client-swift/libs/swift-handy"]
+	path = actionhero-client-swift/libs/swift-handy
+	url = git@github.com:katopz/swift-handy.git
