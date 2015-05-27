@@ -177,6 +177,10 @@ class AHClient:AHEmitter {
         self.send(["event": "say", "room": room, "message": message], callback: callback)
     }
     
+    func file(room:String, file:String, callback:foo?) {
+        self.send(["event": "file", "file": file], callback: callback)
+    }
+    
     func roomAdd() {
         roomAdd("defaultRoom", nil)
     }
@@ -185,5 +189,21 @@ class AHClient:AHEmitter {
         self.send(["event": "roomAdd", "room": room], callback: { details in
             self.configure(details, callback)
         })
+    }
+    
+    func roomLeave(room:String, _ callback:foo?) {
+        
+        var index = find(self.rooms, room)
+        if(index > -1){ self.rooms.removeAtIndex(index!) }
+        
+        self.send(["event": "roomLeave", "room": room], callback: { details in
+            self.configure(details, callback)
+        })
+    }
+    
+    func disconnect () {
+        self.state = "disconnected"
+        self.client!.end()
+        self.emit("disconnected")
     }
 }

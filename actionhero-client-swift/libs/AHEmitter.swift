@@ -16,8 +16,8 @@ class AHEmitter {
         })
     }
     
-    func emit(name:String, _ data: NSDictionary) {
-        let userInfo = data as [NSObject : AnyObject]
+    func emit(name:String, _ data: NSDictionary? = nil) {
+        let userInfo = data as [NSObject : AnyObject]?
         NSNotificationCenter.defaultCenter().postNotificationName(name, object: self, userInfo: userInfo)
     }
 }
