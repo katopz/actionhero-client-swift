@@ -7,5 +7,5 @@ Prerequisite
 * Client : [Primus Objective-C](https://github.com/seegno/primus-objc)
 * Server : [ActionHeroJS](http://www.actionherojs.com/)
 * Package Manager : [CocoaPod](https://cocoapods.org/)
-- - -
+
 #### Under lazy development, Please use as you own risk.
